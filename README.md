@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+# _reactJS_Bootcamp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Extensions needed:
+Thunderclient - alt. to Postman for API testing in VSCODE
+ES7 React/Redux/GraphQL/React-Native snippets
+Bracket Color
+Auto Rename
+Live Server
+Prettier - Code Formatter
 
-## Available Scripts
+## Official Doc: https://react.dev/
 
-In the project directory, you can run:
+## NVM Installation:
 
-### `npm start`
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh
+OR
+Run the install.sh from: https://github.com/nvm-sh/nvm/blob/master/install.sh
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+./install.sh
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+nano /home/zubair/.bashrc
 
-### `npm test`
+## This should be added at the end:
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+source /home/zubair/.bashrc
 
-### `npm run build`
+## Checking version
+nvm list-remote
+nvm install v20.2.0
+node -v
+npm -v
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Creating React App
+npx create-react-app my-app
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Notes
+React is actually a JS Library but it competes with Frameworks like Angular.js & Vue.js
 
-### `npm run eject`
+# Removing Nodejs & NPM
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+sudo apt-get remove nodejs npm node
+sudo apt-get purge nodejs
+sudo rm -rf /usr/local/bin/npm 
+sudo rm -rf /usr/local/share/man/man1/node* 
+sudo rm -rf /usr/local/lib/dtrace/node.d
+rm -rf ~/.npm
+rm -rf ~/.node-gyp
+sudo rm -rf /opt/local/bin/node
+sudo rm -rf /opt/local/include/node
+sudo rm -rf /opt/local/lib/node_modules
+sudo rm -rf /usr/local/lib/node*
+sudo rm -rf /usr/local/include/node*
+sudo rm -rf /usr/local/bin/node*
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+You can verify your uninstallation by these commands; they should not output anything.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+which node
+which nodejs
+which npm
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## STARTING THE APP
+npm start
 
-## Learn More
+Local:            http://localhost:3000
+On Your Network:  http://192.168.29.108:3000
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## FOLDER STRUCTURE
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Node Modules -> contains all the packages
+.gitignore -> used by Github to ignore fules not be pushed
+paskage.json -> list of packages which are installed in "Node Modules" folder
+package-lock.json -> used along with package.json to re-create the Node Modules fodler
+README.md -> Documentation purposes
 
-### Code Splitting
+Public -> has the index.html loaded in the browser. Ideally we should not tocuh it. The <div id="root"> will render the content with the help of JS.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+src -> The React Components got under SRC. YOu will send the Props & it will hold the component States.
 
-### Analyzing the Bundle Size
+index.js: it is an entry point for us which will ask to render the App component
+app.js: it is a component. Any change we make to it will get rendered by the index.js using the document.getElementById('root') tag
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
